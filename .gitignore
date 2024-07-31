@@ -1,0 +1,13 @@
+target
+.idea
+bin
+.settings
+*.cache-main
+*.cache-tests
+*.classpath
+*.project
+core-showcase/.settings
+.DS_Store
+staging
+.env
+.bsp
