@@ -33,13 +33,21 @@ object ShowcaseCard extends App {
   owlPanel.add(owlSwingComponent, BorderLayout.CENTER)
 
   val owlDoctusSched = DoctusSchedulerSwing
-  val owlDoctusCanvas = DoctusCanvasSwing(owlSwingComponent)
-  val owlDoctusImage = DoctusImageSwing("logo.png")
+  val owlDoctusCanvas: DoctusCanvasSwing = DoctusCanvasSwing(owlSwingComponent)
+  val owlDoctusImage: DoctusImageSwing = DoctusImageSwing("logo.png")
 
-  val owlDoctusNext = DoctusActivatableSwing(owlNextButton)
-  val owlDoctusPrevious = DoctusActivatableSwing(owlPreviousButton)
-  val owlDoctusOwl = DoctusActivatableSwing(owlOwlButton)
-  val owlDoctusLeaf = DoctusActivatableSwing(owlLeafButton)
+  val owlDoctusNext: DoctusActivatableSwing = DoctusActivatableSwing(
+    owlNextButton
+  )
+  val owlDoctusPrevious: DoctusActivatableSwing = DoctusActivatableSwing(
+    owlPreviousButton
+  )
+  val owlDoctusOwl: DoctusActivatableSwing = DoctusActivatableSwing(
+    owlOwlButton
+  )
+  val owlDoctusLeaf: DoctusActivatableSwing = DoctusActivatableSwing(
+    owlLeafButton
+  )
 
   // create leaf components
 
@@ -65,18 +73,28 @@ object ShowcaseCard extends App {
   leafPanel.add(leafSwingComponent, BorderLayout.CENTER)
 
   val leafDoctusSched = DoctusSchedulerSwing
-  val leafDoctusCanvas = DoctusCanvasSwing(leafSwingComponent)
-  val leafDoctusImages = Seq(
+  val leafDoctusCanvas: DoctusCanvasSwing = DoctusCanvasSwing(
+    leafSwingComponent
+  )
+  val leafDoctusImages: Seq[DoctusImageSwing] = Seq(
     DoctusImageSwing("l1.png"),
     DoctusImageSwing("l2.png"),
     DoctusImageSwing("l3.png"),
     DoctusImageSwing("l4.png")
   )
 
-  val leafDoctusNext = DoctusActivatableSwing(leafNextButton)
-  val leafDoctusPrevious = DoctusActivatableSwing(leafPreviousButton)
-  val leafDoctusOwl = DoctusActivatableSwing(leafOwlButton)
-  val leafDoctusLeaf = DoctusActivatableSwing(leafLeafButton)
+  val leafDoctusNext: DoctusActivatableSwing = DoctusActivatableSwing(
+    leafNextButton
+  )
+  val leafDoctusPrevious: DoctusActivatableSwing = DoctusActivatableSwing(
+    leafPreviousButton
+  )
+  val leafDoctusOwl: DoctusActivatableSwing = DoctusActivatableSwing(
+    leafOwlButton
+  )
+  val leafDoctusLeaf: DoctusActivatableSwing = DoctusActivatableSwing(
+    leafLeafButton
+  )
 
   // Put all together
   val cardPanel = new JPanel()
@@ -85,7 +103,7 @@ object ShowcaseCard extends App {
   cardPanel.add(owlPanel, "owl")
   cardPanel.add(leafPanel, "leaf")
 
-  val doctusCard = DoctusSwingCard(cardPanel, cardLayout)
+  val doctusCard: DoctusSwingCard = DoctusSwingCard(cardPanel, cardLayout)
 
   // Start the controllers
   OwlDoctusController(

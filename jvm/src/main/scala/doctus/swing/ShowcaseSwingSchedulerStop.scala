@@ -4,6 +4,7 @@ import doctus.core._
 
 import java.awt.{BorderLayout, Dimension, FlowLayout}
 import javax.swing._
+import java.net.URL
 
 object ShowcaseSwingSchedulerStop extends App {
 
@@ -28,9 +29,9 @@ object ShowcaseSwingSchedulerStop extends App {
 
   // Wrap Components
   val sched = DoctusSchedulerSwing
-  val start = DoctusActivatableSwing(startButton)
-  val stop = DoctusActivatableSwing(stopButton)
-  val canv = DoctusCanvasSwing(panel)
+  val start: DoctusActivatableSwing = DoctusActivatableSwing(startButton)
+  val stop: DoctusActivatableSwing = DoctusActivatableSwing(stopButton)
+  val canv: DoctusCanvasSwing = DoctusCanvasSwing(panel)
 
   // Start the controller
   DoctusControllerSchedulerStop(sched, start, stop, canv)
@@ -38,7 +39,7 @@ object ShowcaseSwingSchedulerStop extends App {
   // Open the application
   val top = new JFrame()
   top.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE)
-  val url = getClass.getClassLoader.getResource("logo.png")
+  val url: URL = getClass.getClassLoader.getResource("logo.png")
   if (url != null) top.setIconImage(new ImageIcon(url).getImage)
   top.setTitle("Scheduler Start Stop")
   top.setContentPane(contPanel)

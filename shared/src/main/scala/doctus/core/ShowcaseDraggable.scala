@@ -19,7 +19,7 @@ case class DoctusControllerDraggable(
 
   var actCount = 0
 
-  var actions = List.empty[ActionTyp]
+  var actions: List[ActionTyp] = Nil
 
   draggable.onStart {
     started

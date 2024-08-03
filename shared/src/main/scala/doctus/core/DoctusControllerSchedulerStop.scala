@@ -35,7 +35,7 @@ case class DoctusControllerSchedulerStop(
     g.text(cnt.toString, x - fs / 2.0, y + fs / 4.0, 0)
   })
 
-  sched.start(canv.repaint, 10)
+  sched.start(() => canv.repaint(), 10)
 
   start.onDeactivated(() => {
     stopper ::= sched.start(

@@ -1,4 +1,4 @@
-ThisBuild / scalaVersion := "2.13.14"
+ThisBuild / scalaVersion := "3.4.2"
 ThisBuild / semanticdbEnabled := true
 ThisBuild / semanticdbVersion := scalafixSemanticdb.revision
 
@@ -11,13 +11,13 @@ lazy val organisation = "net.entelijan"
 lazy val doctusShowcase = crossProject(JSPlatform, JVMPlatform).
   in(file(".")).
   settings(
-    name := "doctus-showcase", 
+    name := "doctus-showcase",
     organization := organisation,
     version := doctusVersion,
     testFrameworks += new TestFramework("utest.runner.Framework"),
     scalacOptions ++= Seq(
       "-deprecation",
-      "-Wunused",
+      "-Wunused:all",
     ),
   ).
   jvmSettings(

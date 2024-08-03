@@ -5,6 +5,7 @@ import doctus.core._
 import java.awt.{BorderLayout, Dimension, FlowLayout}
 import javax.swing._
 import javax.swing.border.EmptyBorder
+import java.net.URL
 
 object ShowcaseSwingComponent extends App {
 
@@ -56,9 +57,9 @@ object ShowcaseSwingComponent extends App {
 
   // Wrap the components
   private val infoText: DoctusTextSwing = DoctusTextSwing(textField)
-  val pointable01 = DoctusPointableSwing(label01)
-  val pointable02 = DoctusPointableSwing(panel02)
-  val upKey04 = DoctusKeySwing(cont)
+  val pointable01: DoctusPointableSwing = DoctusPointableSwing(label01)
+  val pointable02: DoctusPointableSwing = DoctusPointableSwing(panel02)
+  val upKey04: DoctusKeySwing = DoctusKeySwing(cont)
   private val clickable01 = DoctusActivatableSwing(button01)
   val select03 = new DoctusSelectSwingComboBox[FullName](
     comboBox03
@@ -80,7 +81,7 @@ object ShowcaseSwingComponent extends App {
   val top = new JFrame()
   top.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE)
   top.setTitle("Doctus Component Showcase")
-  val url = getClass.getClassLoader.getResource("logo.png")
+  val url: URL = getClass.getClassLoader.getResource("logo.png")
   if (url != null) top.setIconImage(new ImageIcon(url).getImage)
   top.setContentPane(cont)
   // Calling makes only sense after the component was added to the JFrame

@@ -4,6 +4,7 @@ import doctus.core._
 
 import java.awt.{BorderLayout, Dimension}
 import javax.swing._
+import java.net.URL
 
 object ShowcaseSwingAnimated extends App {
 
@@ -16,8 +17,8 @@ object ShowcaseSwingAnimated extends App {
 
   // Wrap the components
   val sched = DoctusSchedulerSwing
-  val canvas = DoctusCanvasSwing(panel)
-  val img = DoctusImageSwing("logo.png")
+  val canvas: DoctusCanvasSwing = DoctusCanvasSwing(panel)
+  val img: DoctusImageSwing = DoctusImageSwing("logo.png")
 
   // Start the controller
   DoctusControllerAnimated(canvas, sched, img)
@@ -25,7 +26,7 @@ object ShowcaseSwingAnimated extends App {
   // Open the main frame
   val top = new JFrame()
   top.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE)
-  val url = getClass.getClassLoader.getResource("logo.png")
+  val url: URL = getClass.getClassLoader.getResource("logo.png")
   if (url != null) top.setIconImage(new ImageIcon(url).getImage)
   top.setTitle("Animated Showcase")
   top.getContentPane.add(panel, BorderLayout.CENTER)

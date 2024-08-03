@@ -11,7 +11,7 @@ case class DoctusControllerPointable(
 
   var actCount = 0
   private var init = true
-  var actions = List.empty[ActionTyp]
+  var actions: List[ActionTyp] = Nil
 
   pointable.onStart { started }
   pointable.onStop { stopped }
